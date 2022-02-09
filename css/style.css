@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -996,14 +996,14 @@ a {
   margin-top: 25px;
 }
 
-#price-1000 {
+#price-cancelled {
   text-decoration: line-through;  
   font-family: Open Sans-Bold, sans-serif;
   font-size: 0.875em;  
   color: #0f0d0e;  
 }
 
-#price-800 {
+#price-final {
   font-family: Open Sans-Bold, sans-serif;
   font-size: 1.25em;  
   color: #0f0d0e;  
