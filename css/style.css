@@ -117,7 +117,7 @@ a {
     flex-direction: column;
     justify-content: center;
     width: 30px;
-    gap: 10px;
+    gap: 6px;
     height: 100%;    
   }
 
@@ -126,7 +126,7 @@ a {
   }  
 }
 
-@media (min-width: 360px) and (max-width: 767px) {
+@media (max-width: 767px) {
   
   .header {
     height: 640px;
@@ -157,7 +157,7 @@ a {
     flex-direction: column;
     justify-content: center;
     width: 25px;
-    gap: 7px;
+    gap: 6px;
     height: 100%;   
   }
 
@@ -185,18 +185,15 @@ a {
 }
 
 .trending-heading {
-  text-transform: uppercase;  
-}
-
-.trending-link {
+  text-transform: uppercase;
   text-decoration: none;
   font-family: Open Sans-Bold, sans-serif;
-  font-size: 0.8333em;  
+  font-size: 1.125em;  
   color: #0f0d0e;
   vertical-align: top;
 }
 
-.trending-link::after {
+.trending-heading::after {
   content: "";
   display: block;  
   width: 66px;  
@@ -209,18 +206,25 @@ a {
 
 .trending {
   display: flex;
-  width: 100%;
-  height: 320px;
+  width: 100%;  
   margin-top: 25px;
   column-gap: 4px;
 }
 
-.trending-box-1 {
-  width: calc(100%/4);  
+.trending-box-item {
+  width: calc(100%/4);
+  height: 320px;    
+}
+
+.trending-box-1 {  
   background-image: url(../images/trend1.jpg);  
   background-repeat: no-repeat; 
   background-size: cover;
-  position: relative;
+  position: relative; 
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px 20px;
 }
 
 .trending-box-1::before {
@@ -233,22 +237,18 @@ a {
   background: rgba(0, 0, 0, 0.6);
 }
 
-.trending-box-content {
-  width: calc(100% - 40px);  
-  display: flex;
-  flex-direction: column;  
+.trending-box-content {  
   border: 3px solid #766940;
-  position: absolute; 
-  bottom: 15px;
-  margin-left: 20px;  
-  padding: 5%;  
+  z-index: 1;
+  padding: 5%; 
+  text-align: left;  
+  width: 100%;
 }
 
 .trend-list {
   display: flex;
   justify-content: flex-start;
   column-gap: 19px;
-
 }
 
 .trend-list-item {  
@@ -262,20 +262,22 @@ a {
   font-family: Open Sans-Bold, sans-serif;
 }
 
-.trend-name {
+.trend-name a {
   font-size: 20px;
   font-family: Open Sans-Bold, sans-serif;
   color: #ffffff;
-  text-transform: uppercase;
-  text-align: left;
+  text-transform: uppercase;  
 }
 
 .trending-box-2 {
-  width: calc(100%/4);  
   background-image: url(../images/trend2.jpg);  
   background-repeat: no-repeat; 
   background-size: cover;
-  position: relative;
+  position: relative; 
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px 20px;
 }
 
 .trending-box-2::before {
@@ -289,11 +291,14 @@ a {
 }
 
 .trending-box-3 {
-  width: calc(100%/4);  
   background-image: url(../images/trend3.jpg);  
   background-repeat: no-repeat; 
   background-size: cover;
-  position: relative;
+  position: relative; 
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px 20px;
 }
 
 .trending-box-3::before {
@@ -307,11 +312,14 @@ a {
 }
 
 .trending-box-4 {
-  width: calc(100%/4);  
   background-image: url(../images/trend4.jpg);  
   background-repeat: no-repeat; 
   background-size: cover;
-  position: relative;
+  position: relative; 
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px 20px;
 }
 
 .trending-box-4::before {
@@ -324,67 +332,58 @@ a {
   background: rgba(0, 0, 0, 0.6);
 }
 
+
 @media (min-width: 768px) and (max-width: 1199px) {
-  
-
-  .trending-link {
-    font-size: 0.75em;
-  }
-
-  .trend-name {
-    font-size: 1.0625em;
-  }
 
   .trending {
-    flex-wrap: wrap;    
-    
+    flex-wrap: wrap;       
   }
 
-  .trending-box-1, .trending-box-2, .trending-box-3, .trending-box-4 {
+  .trending-box-item {
     width: calc(50% - 2px);
-    
+  }
+
+  .trending-box-item:nth-child(-n+2) {
+    margin-bottom: 4px;
+  }
+
+  .trend-name a {
+    font-size: 17px;
   }
 }
 
 
-@media (min-width: 360px) and (max-width: 767px) {
-
-  .trending-link {
-    font-size: 0.75em;
-  }
-
-  .trend-name {
-    font-size: 1.0625em;
-  }
+@media (max-width: 767px) {
 
   .trending {
-    flex-wrap: wrap;
-    height: 100%;   
+    flex-wrap: wrap;     
   }
 
-  .trending-box-1, .trending-box-2, .trending-box-3, .trending-box-4 {
-    width: 100%;
-    height: 65vmin;
+  .trending-box-item {
+    width: 100%;    
   }
 
-  .trending-box-1, .trending-box-2, .trending-box-3 {
+  .trending-box-item:nth-child(-n+3) {
     margin-bottom: 2px;
+  }
+
+  .trend-name a {
+    font-size: 16px;
   }
 }
 
 
 @media (min-width: 641px) and (max-width: 1199px) and (orientation: portrait) {
   
-  .trending {
-    height: 65vmin;
+  .trending {    
     flex-wrap: wrap;    
   }
 
-  .trending-box-1, .trending-box-2, .trending-box-3, .trending-box-4 {
-    width: calc(50% - 2px);
+  .trending-box-item {
+    width: calc(50% - 2px);    
   }
 
-  .trending-box-1, .trending-box-2 {
+  .trending-box-item:nth-child(-n+2) {
     margin-bottom: 4px;
   }
 }
@@ -395,16 +394,16 @@ a {
     flex-wrap: wrap;
   }
 
+  .trending-box-item {
+    width: calc(25% - 4px);    
+  }
+
   .trend-list-item:nth-child(2) {
     margin-left: 5px;    
   }
 
   .trend-list {
     column-gap: normal;   
-  }
-
-  .trending-box-1, .trending-box-2, .trending-box-3, .trending-box-4 {
-    width: calc(25% - 4px);
   }
 }
 
@@ -414,7 +413,7 @@ a {
     flex-wrap: wrap;    
   }
 
-  .trending-box-1, .trending-box-2, .trending-box-3, .trending-box-4 {
+  .trending-box-item {
     width: calc(50% - 2px);    
   }
 
@@ -551,7 +550,7 @@ a {
   }
 }
 
-@media (min-width: 360px) and (max-width: 767px) {
+@media (max-width: 767px) {
 
   .content {
     padding-left: 15px;
@@ -615,15 +614,12 @@ a {
 .new-post-name {
   text-transform: uppercase;  
   text-align: center; 
-}
-
-.new-post-link {  
   font-family: Open Sans-Bold, sans-serif;
-  font-size: 0.7479em;  
+  font-size: 0.875em;  
   color: #0f0d0e;
 }
 
-.new-post-link::after {
+.new-post-name::after {
   content: "";
   display: block;  
   width: 66px;
@@ -727,16 +723,13 @@ a {
 }
 
 .mailing-name {
-  text-transform: uppercase;    
-}
-
-.mailing-link {  
+  text-transform: uppercase;  
   font-family: Open Sans-Bold, sans-serif;
-  font-size: 0.7479em;  
-  color: #0f0d0e;
+  font-size: 0.875em;  
+  color: #0f0d0e;  
 }
 
-.mailing-link::after {
+.mailing-name::after {
   content: "";
   display: block;  
   width: 66px;
@@ -781,15 +774,12 @@ a {
 
 .tags-name {
   text-transform: uppercase;  
-}
-
-.tags-link {  
   font-family: Open Sans-Bold, sans-serif;
-  font-size: 0.7479em;  
+  font-size: 0.875em;  
   color: #0f0d0e;
 }
 
-.tags-link::after {
+.tags-name::after {
   content: "";
   display: block;  
   width: 66px;
@@ -829,15 +819,12 @@ a {
 
 .themes-name {
   text-transform: uppercase;  
-}
-
-.themes-link {  
   font-family: Open Sans-Bold, sans-serif;
-  font-size: 0.7479em;  
+  font-size: 0.875em;  
   color: #0f0d0e;
 }
 
-.themes-link::after {
+.themes-name::after {
   content: "";
   display: block;  
   width: 66px;
@@ -919,16 +906,14 @@ a {
 .our-products-heading {
   text-transform: uppercase;
   text-align: center;
-}
 
-.products-link {  
   font-family: Open Sans-Bold, sans-serif;
-  font-size: 20px;  
+  font-size: 1.125em;  
   color: #0f0d0e;
   vertical-align: top;
 }
 
-.products-link::after {
+.our-products-heading::after {
   content: "";
   display: block;  
   width: 66px;  
@@ -1009,10 +994,6 @@ a {
   color: #0f0d0e;  
 }
 
-.box-button {
-
-}
-
 .button-shop {
   font-family: Open Sans-Bold, sans-serif;
   font-size: 14px;  
@@ -1054,7 +1035,7 @@ a {
   }
 }
 
-@media (min-width: 360px) and (max-width: 767px) {
+@media (max-width: 767px) {
 
   .our-products {
     margin-top: 40px;
@@ -1201,7 +1182,7 @@ a {
 .popap {  
   position: fixed;
   height: 100vh; 
-  width: 100%; 
+  width: 100%;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1210,47 +1191,37 @@ a {
   z-index: 1;  
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center; 
 }
 
 .box-popap {
-  width: 390px;
-  height: 580px;
+  width: 390px;  
   background: #ffffff;  
   text-align: center;
   flex-wrap: wrap;
-  padding: 0 30px;
+  padding: 0 30px 55px;
   position: relative; 
 }
 
-.box-popap::before {
-  content: "";
-
+.close-button {
   width: 15px;
   height: 15px;
-  
   position: absolute;
-  background-image: url(../svg/form-x.svg);  
-  background-repeat: no-repeat;  
-  background-size: cover;
-  
   top: -25px;
-  right: 0;  
+  right: 0;
 }
 
 .popap-heading {
   text-transform: uppercase;    
   padding-top: 50px;
-}
 
-.popap-link {  
   font-family: Open Sans-Bold, sans-serif;
-  font-size: 0.8333em;  
+  font-size: 1.25em;  
   color: #0f0d0e;
-  vertical-align: top;  
+  vertical-align: top;
 }
 
-.popap-link::after {
+.popap-heading::after {
   content: "";
   display: block;  
   width: 66px;  
